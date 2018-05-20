@@ -12,6 +12,9 @@ import numpy as np
 import matplotlib.animation as animation
 
 plt.axis([-50,50,-50,50])
+
+#plt.ion is for turning on the 'interactive mode' in matplotlib
+#allows plot to be updated in real time, so technically its not a proper 'animation'...
 plt.ion()
 
 class OOP_body:
@@ -40,6 +43,7 @@ class OOP_body:
             y_pos = self.getY(time)
             print('%f, %f' %(x_pos, y_pos))            
             plt.scatter(x_pos, y_pos)
+            # pauses for a bit until jumping to the next iteration.
             plt.pause(0.01)
             
 
@@ -67,7 +71,7 @@ fig = plt.figure()
 ani = animation.FuncAnimation(fig, moon.position(), interval=1000)
 plt.show()
 
+[/] DONE - rewrote code all into 1 single object. (Before, there were multiple objects.)
+Got rid of OOP_planet, OOP_moon and jsut keep OOP_body, but wiht an extra input: parent = None as default.
 
-Can also re-do all the objects into just 1 object. 
-Get rid of OOP_planet, OOP_moon and jsut keep OOP_body, but wiht an extra input: parent = None as default.
 '''
